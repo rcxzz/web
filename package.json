@@ -1,13 +1,13 @@
 {
-  "name": "api-climas",
+  "name": "api-pokemon",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev --inspect -r tsconfig-paths/register --transpile-only --ignore-watch node_modules src/shared/http/server.ts",
-    "typeorm": "ts-node --esm -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
     "migration:run": "npm run typeorm -- migration:run -d src/shared/typeorm/data-source.ts",
-    "migration:generate": "npm run typeorm -- migration:generate src/shared/typeorm/migrations/CreateTables -d src/shared/typeorm/data-source.ts"
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
+    "migration:generate": "npm run typeorm -- migration:generate -d src/shared/typeorm/data-source.ts"
   },
   "keywords": [],
   "author": "eric",
@@ -16,9 +16,9 @@
   "dependencies": {
     "celebrate": "^15.0.3",
     "cors": "^2.8.6",
-    "express": "^4.22.2",
+    "express": "^4.22.1",
     "express-async-errors": "^3.1.1",
-    "pg": "^8.22.0",
+    "pg": "^8.21.0",
     "reflect-metadata": "^0.2.2",
     "typeorm": "^1.0.0"
   },

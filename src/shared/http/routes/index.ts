@@ -1,10 +1,18 @@
 import { Router } from 'express';
-import citiesRouter from './cities.routes';
-import forecastsRouter from './forecasts.routes';
+
+import trainersRouter from './trainers.routes';
+import pokemonsRouter from './pokemon.routes';
 
 const routes = Router();
 
-routes.use('/cities', citiesRouter);
-routes.use('/forecasts', forecastsRouter);
+routes.use(
+  '/trainers',
+  trainersRouter,
+);
+
+routes.use(
+  '/pokemons',
+  pokemonsRouter,
+);
 
 export default routes;
